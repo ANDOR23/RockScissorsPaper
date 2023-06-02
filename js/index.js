@@ -4,16 +4,8 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 function myChoice(value) {
-    /* let divMyChoice = document.querySelector('#my_choice')
-    divMyChoice.innerHTML = '<img src="../images/' + value + 'x2.png"><p>' + value + '</p>' */
-    const divMyChoice = document.getElementById("my_choice");
-    var img = document.createElement("img");
-    img.src = "../images/" + value + "x2.png";
-    var p = document.createElement("p");
-    p.textContent = value;
-
-    divMyChoice.appendChild(img);
-    divMyChoice.appendChild(p);
+    const divMyChoice = document.querySelector('#my_choice')
+    divMyChoice.innerHTML = '<img src="/images/' + value + 'x2.png"><p>' + value + '</p>'
 
     pcChoice(value);
 }
@@ -28,7 +20,7 @@ async function pcChoice(value) {
     const pPcScore = document.getElementById('pc_score')
 
     let divPcChoice = document.querySelector('#pc_choice')
-    divPcChoice.innerHTML = '<img src="../images/' + PC_choice + 'x2.png"><p>' + PC_choice + '</p>'
+    divPcChoice.innerHTML = '<img src="/images/' + PC_choice + 'x2.png"><p>' + PC_choice + '</p>'
 
     if (value === PC_choice) {
         await sleep(1000);
