@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Poppins&display=swap"
+        rel="stylesheet">
+    <title>Piedra, Papel o Tijera</title>
+</head>
+
+<body>
+    <header class="header">
+        Piedra, Papel o Tijera
+    </header>
+    <div class="content">
+        <div class="score_div">
+            <div class="score">
+                <p id="my_score">0</p>
+                <p>-</p>
+                <p id="pc_score">0</p>
+            </div>
+            <br>
+            <p id="marcador">Marcador</p>
+        </div>
+        <div class="field">
+            <div class="my_hand">
+                <h1>Tú</h1>
+                <p>Selecciona una opción</p>
+                <img id="choice" onclick="choice('Paper')" src="images/Paper.png" alt="">
+                <img id="choice" onclick="choice('Rock')" src="images/Rock.png" alt="">
+                <img id="choice" onclick="choice('Scissors')" src="images/Scissors.png" alt="">
+            </div>
+            <div id="result">
+                <div id="my_choice"></div>
+                <div class="separator"></div>
+                <div id="pc_choice"></div>
+            </div>
+
+            <div class="pc_hand">
+                <h1>Computadora</h1>
+                <img id="choice" src="images/Paper.png" alt="">
+                <img id="choice" src="images/Rock.png" alt="">
+                <img id="choice" src="images/Scissors.png" alt="">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
