@@ -5,7 +5,7 @@ function sleep(ms) {
 }
 function myChoice(value) {
     const divMyChoice = document.querySelector('#my_choice')
-    divMyChoice.innerHTML = '<img src="/images/' + value + 'x2.png"><p>' + value + '</p>'
+    divMyChoice.innerHTML = '<img src="/../images/' + value + 'x2.png"><p>' + value + '</p>'
 
     pcChoice(value);
 }
