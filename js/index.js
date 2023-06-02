@@ -3,74 +3,82 @@ var pcScore = 0;
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-function choice(value) {
-    let element = document.querySelector('#my_choice')
-    element.innerHTML = '<img src="../images/' + value + 'x2.png"><p>' + value + '</p>'
+function myChoice(value) {
+    /* let divMyChoice = document.querySelector('#my_choice')
+    divMyChoice.innerHTML = '<img src="../images/' + value + 'x2.png"><p>' + value + '</p>' */
+    const divMyChoice = document.getElementById("my_choice");
+    var img = document.createElement("img");
+    img.src = "../images/" + value + "x2.png";
+    var p = document.createElement("p");
+    p.textContent = value;
+
+    divMyChoice.appendChild(img);
+    divMyChoice.appendChild(p);
 
     pcChoice(value);
 }
 
 async function pcChoice(value) {
 
-    const array = ['Paper', 'Rock', 'Scissors']
-    const choice = array[Math.floor(Math.random() * array.length)];
-
+    const optionsArray = ['Paper', 'Rock', 'Scissors']
+    const PC_choice = optionsArray[Math.floor(Math.random() * optionsArray.length)];
 
     const divResult = document.getElementById('result')
-    const myPoints = document.getElementById('my_score')
-    const pcPoints = document.getElementById('pc_score')
+    const pMyScore = document.getElementById('my_score')
+    const pPcScore = document.getElementById('pc_score')
 
-    let element = document.querySelector('#pc_choice')
-    element.innerHTML = '<img src="../images/' + choice + 'x2.png"><p>' + choice + '</p>'
+    let divPcChoice = document.querySelector('#pc_choice')
+    divPcChoice.innerHTML = '<img src="../images/' + PC_choice + 'x2.png"><p>' + PC_choice + '</p>'
 
-    if (value === choice) {
+    if (value === PC_choice) {
         await sleep(1000);
         divResult.innerHTML = '<h1>EMPATE</h1>'
         await sleep(1000);
         divResult.innerHTML = '<div id="my_choice"></div><div class="separator"></div><div id="pc_choice"></div>'
-    } else if (value == 'Scissors' && choice == 'Paper') {
+    } else if (value == 'Scissors' && PC_choice == 'Paper') {
         await sleep(1000);
-
         myScore++
-        myPoints.innerHTML = myScore
+        pMyScore.innerHTML = myScore
         divResult.innerHTML = '<h1>GANASTE</h1>'
         await sleep(1000);
         divResult.innerHTML = '<div id="my_choice"></div><div class="separator"></div><div id="pc_choice"></div>'
 
-    } else if (value == 'Scissors' && choice == 'Rock') {
+    } else if (value == 'Scissors' && PC_choice == 'Rock') {
         await sleep(1000);
         pcScore++
-        pcPoints.innerHTML = pcScore
+        pPcScore.innerHTML = pcScore
         divResult.innerHTML = '<h1>PERDISTE</h1>'
         await sleep(1000);
         divResult.innerHTML = '<div id="my_choice"></div><div class="separator"></div><div id="pc_choice"></div>'
-    } else if (value == 'Paper' && choice == 'Scissors') {
+
+    } else if (value == 'Paper' && PC_choice == 'Scissors') {
         await sleep(1000);
         pcScore++
-        pcPoints.innerHTML = pcScore
+        pPcScore.innerHTML = pcScore
         divResult.innerHTML = '<h1>PERDISTE</h1>'
         await sleep(1000);
         divResult.innerHTML = '<div id="my_choice"></div><div class="separator"></div><div id="pc_choice"></div>'
-    } else if (value == 'Paper' && choice == 'Rock') {
-        await sleep(1000);
 
+    } else if (value == 'Paper' && PC_choice == 'Rock') {
+        await sleep(1000);
         myScore++
-        myPoints.innerHTML = myScore
+        pMyScore.innerHTML = myScore
         divResult.innerHTML = '<h1>GANASTE</h1>'
         await sleep(1000);
         divResult.innerHTML = '<div id="my_choice"></div><div class="separator"></div><div id="pc_choice"></div>'
-    } else if (value == 'Rock' && choice == 'Scissors') {
-        await sleep(1000);
 
+    } else if (value == 'Rock' && PC_choice == 'Scissors') {
+        await sleep(1000);
         myScore++
-        myPoints.innerHTML = myScore
+        pMyScore.innerHTML = myScore
         divResult.innerHTML = '<h1>GANASTE</h1>'
         await sleep(1000);
         divResult.innerHTML = '<div id="my_choice"></div><div class="separator"></div><div id="pc_choice"></div>'
-    } else if (value == 'Rock' && choice == 'Paper') {
+
+    } else if (value == 'Rock' && PC_choice == 'Paper') {
         await sleep(1000);
         pcScore++
-        pcPoints.innerHTML = pcScore
+        pPcScore.innerHTML = pcScore
         divResult.innerHTML = '<h1>PERDISTE</h1>'
         await sleep(1000);
         divResult.innerHTML = '<div id="my_choice"></div><div class="separator"></div><div id="pc_choice"></div>'
